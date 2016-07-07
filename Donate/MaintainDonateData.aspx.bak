@@ -1,0 +1,136 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MaintainDonateData.aspx.cs" Inherits="Donate.MaintainDonateData" %>
+
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+        </telerik:RadAjaxManager>
+    <div>
+    
+        <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=NamedDonateEntities" DefaultContainerName="NamedDonateEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="NamedDonates">
+        </asp:EntityDataSource>
+    
+        <asp:EntityDataSource ID="EntityDataSource2" runat="server" ConnectionString="name=NamedDonateEntities" DefaultContainerName="NamedDonateEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="AnonymousDonates">
+        </asp:EntityDataSource>
+    
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DonateConnectionString %>" SelectCommand="SELECT * FROM [AnonymousDonate]"></asp:SqlDataSource>
+    
+    </div>
+        <dx:ASPxGridView ID="ASPxGridView1"  runat="server" AutoGenerateColumns="False" DataSourceID="EntityDataSource1" EnableTheming="True" KeyFieldName="DonateID" Theme="Mulberry" Font-Bold="True" Font-Names="Microsoft JhengHei">
+            <SettingsEditing Mode="Inline">
+            </SettingsEditing>
+            <Settings ShowFilterRow="True" />
+            <SettingsBehavior AllowFocusedRow="True" ConfirmDelete="True" EnableRowHotTrack="True" />
+            <SettingsCommandButton>
+                <NewButton>
+                    <Image Url="~/icon/new.png">
+                    </Image>
+                </NewButton>
+                <UpdateButton>
+                    <Image Url="~/icon/update.png">
+                    </Image>
+                </UpdateButton>
+                <CancelButton>
+                    <Image Url="~/icon/cancel.png">
+                    </Image>
+                </CancelButton>
+                <EditButton>
+                    <Image Url="~/icon/edit.png">
+                    </Image>
+                </EditButton>
+                <DeleteButton>
+                    <Image Url="~/icon/delete.png">
+                    </Image>
+                </DeleteButton>
+                <SearchPanelApplyButton ButtonType="Link" Text="開始搜尋">
+                </SearchPanelApplyButton>
+                <SearchPanelClearButton ButtonType="Link" Text="取消搜尋">
+                </SearchPanelClearButton>
+            </SettingsCommandButton>
+            <SettingsSearchPanel Visible="True">
+                
+            </SettingsSearchPanel>
+            <SettingsText SearchPanelEditorNullText="搜" />
+            
+<%--            <Templates >
+                <Header>
+                    <dx:ASPxButton runat="server" ID="button1" ></dx:ASPxButton>
+                </Header>
+            </Templates>--%>
+            <Columns>
+<%--                <dx:GridViewDataTextColumn  Caption="捐款流水號" FieldName="DonateID" ReadOnly="True" VisibleIndex="1">
+                    <EditFormSettings Visible="False" />
+                </dx:GridViewDataTextColumn>--%>
+                <dx:GridViewDataTextColumn FieldName="DonateID" VisibleIndex="0" ReadOnly="True">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Contribution" VisibleIndex="1" PropertiesTextEdit-DisplayFormatString="C">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Amount" VisibleIndex="2">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Sponsor" VisibleIndex="3">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="DonorName" VisibleIndex="4">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="DonorID" VisibleIndex="5">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="PhoneNumber" VisibleIndex="6">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Email1" VisibleIndex="7">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Email2" VisibleIndex="8">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Address1" VisibleIndex="9">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Address2" VisibleIndex="10">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Address3" VisibleIndex="11">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Receipt" VisibleIndex="12">
+                </dx:GridViewDataTextColumn>
+            </Columns>
+        </dx:ASPxGridView>
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" GridViewID="ASPxGridView1">
+            <Styles>
+                <Cell Font-Names="Microsoft JhengHei">
+                </Cell>
+            </Styles>
+        </dx:ASPxGridViewExporter>
+        <dx:ASPxButton ID="ASPxButton1" runat="server" EnableTheming="True" OnClick="ASPxButton1_Click" Text="Export to PDF" Theme="RedWine">
+        </dx:ASPxButton>
+        <dx:ASPxButton ID="ASPxButton2" runat="server" EnableTheming="True" OnClick="ASPxButton2_Click" Text="Export to XLSX" Theme="RedWine">
+        </dx:ASPxButton>
+        <dx:ASPxButton ID="ASPxButton3" runat="server" EnableTheming="True" OnClick="ASPxButton3_Click" Text="Export to Print" Theme="RedWine">
+        </dx:ASPxButton>
+        <dx:ASPxButton ID="ASPxButton4" runat="server" EnableTheming="True" OnClick="ASPxButton4_Click" Text="ASPxButton" Theme="RedWine">
+        </dx:ASPxButton>
+        <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
+             
+        </telerik:RadScriptManager>
+        
+        <telerik:RadGrid ID="RadGrid1" runat="server" AllowAutomaticDeletes="True" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" DataSourceID="EntityDataSource2" GroupPanelPosition="Top" Skin="Office2010Black" AutoGenerateDeleteColumn="True" AutoGenerateEditColumn="True">
+            <MasterTableView CommandItemDisplay="Top" AutoGenerateColumns="False" DataKeyNames="DonateID" DataSourceID="EntityDataSource2">
+                <Columns>
+                    <telerik:GridBoundColumn DataField="DonateID" DataType="System.Int32" FilterControlAltText="Filter DonateID column" HeaderText="DonateID" ReadOnly="True" SortExpression="DonateID" UniqueName="DonateID">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="Amount" FilterControlAltText="Filter Amount column" HeaderText="Amount" SortExpression="Amount" UniqueName="Amount">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="ComesFrom" FilterControlAltText="Filter ComesFrom column" HeaderText="ComesFrom" SortExpression="ComesFrom" UniqueName="ComesFrom">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="ContributionWay" FilterControlAltText="Filter ContributionWay column" HeaderText="ContributionWay" SortExpression="ContributionWay" UniqueName="ContributionWay">
+                    </telerik:GridBoundColumn>
+                </Columns>
+            </MasterTableView>
+        </telerik:RadGrid>
+        
+    </form>
+</body>
+</html>

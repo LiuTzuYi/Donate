@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DonateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnonymousDonate">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ComesFrom" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email2" Type="nvarchar" MaxLength="40" />
+          <Property Name="DonateTime" Type="smalldatetime" />
+          <Property Name="ServerReceiveTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ATMInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="BarCodeInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CardInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CardNumber" Type="nchar" MaxLength="19" />
+          <Property Name="EffectiveDate" Type="nchar" MaxLength="5" />
+          <Property Name="CVC" Type="nchar" MaxLength="3" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email3" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServerReceiveTime" Type="datetime" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'D:\USERS\IANLIU\DESKTOP\DONATE1\DONATE\DONATE\APP_DATA\DONATE.MDF.dbo.Category' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="Category">
+          <Property Name="Id" Type="int" />
+          <Property Name="City" Type="nchar" MaxLength="6" />
+          <Property Name="City_Local" Type="nchar" MaxLength="6" />
+        </EntityType>-->
+        <EntityType Name="ChainStoreInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="mytable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ColumnA" Type="uniqueidentifier" />
+          <Property Name="ColumnB" Type="uniqueidentifier" />
+          <Property Name="ColumnC" Type="uniqueidentifier" />
+          <Property Name="ColumnD" Type="nvarchar" MaxLength="40" />
+          <Property Name="Receipt" Type="bit" />
+          <Property Name="DonateTime" Type="smalldatetime" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NamedDonate">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="20" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="20" />
+          <Property Name="DonorName" Type="nvarchar" MaxLength="20" />
+          <Property Name="DonorID" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email1" Type="nvarchar" MaxLength="40" />
+          <Property Name="Email3" Type="nchar" MaxLength="30" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="150" />
+          <Property Name="Receipt" Type="bit" />
+          <Property Name="DonateTime" Type="smalldatetime" />
+          <Property Name="ServerReceiveTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SiteInfo">
+          <Key>
+            <PropertyRef Name="SiteTermID" />
+          </Key>
+          <Property Name="SiteTermID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Candidate" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultSelect" Type="bit" Nullable="false" />
+          <Property Name="SiteTerm1" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiteTerm2" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiteTerm3" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiteTerm4" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiteTerm5" Type="nvarchar" MaxLength="500" />
+          <Property Name="PictureLocation" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="City" Type="nchar" MaxLength="6" />
+          <Property Name="City_Local" Type="nchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="WebATMInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ContributionWay" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="DonateModelStoreContainer">
+          <EntitySet Name="AnonymousDonate" EntityType="Self.AnonymousDonate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ATMInfo" EntityType="Self.ATMInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BarCodeInfo" EntityType="Self.BarCodeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardInfo" EntityType="Self.CardInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChainStoreInfo" EntityType="Self.ChainStoreInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mytable" EntityType="Self.mytable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NamedDonate" EntityType="Self.NamedDonate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteInfo" EntityType="Self.SiteInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebATMInfo" EntityType="Self.WebATMInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DonateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnonymousDonate">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ComesFrom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Sponsor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DonateTime" Type="DateTime" Precision="0" />
+          <Property Name="ServerReceiveTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ATMInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BarCodeInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CardInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="CardNumber" Type="String" MaxLength="19" FixedLength="true" Unicode="true" />
+          <Property Name="EffectiveDate" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="CVC" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServerReceiveTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ChainStoreInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mytable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ColumnA" Type="Guid" />
+          <Property Name="ColumnB" Type="Guid" />
+          <Property Name="ColumnC" Type="Guid" />
+          <Property Name="ColumnD" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Receipt" Type="Boolean" />
+          <Property Name="DonateTime" Type="DateTime" Precision="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="NamedDonate">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="ContributionWay" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Sponsor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DonorName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DonorID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Email3" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Receipt" Type="Boolean" />
+          <Property Name="DonateTime" Type="DateTime" Precision="0" />
+          <Property Name="ServerReceiveTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SiteInfo">
+          <Key>
+            <PropertyRef Name="SiteTermID" />
+          </Key>
+          <Property Name="SiteTermID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Candidate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultSelect" Type="Boolean" Nullable="false" />
+          <Property Name="SiteTerm1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTerm2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTerm3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTerm4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiteTerm5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PictureLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="City_Local" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WebATMInfo">
+          <Key>
+            <PropertyRef Name="DonateID" />
+          </Key>
+          <Property Name="DonateID" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ContributionWay" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DonateEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnonymousDonate" EntityType="Self.AnonymousDonate" />
+          <EntitySet Name="ATMInfo" EntityType="Self.ATMInfo" />
+          <EntitySet Name="BarCodeInfo" EntityType="Self.BarCodeInfo" />
+          <EntitySet Name="CardInfo" EntityType="Self.CardInfo" />
+          <EntitySet Name="ChainStoreInfo" EntityType="Self.ChainStoreInfo" />
+          <EntitySet Name="mytable" EntityType="Self.mytable" />
+          <EntitySet Name="NamedDonate" EntityType="Self.NamedDonate" />
+          <EntitySet Name="SiteInfo" EntityType="Self.SiteInfo" />
+          <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="WebATMInfo" EntityType="Self.WebATMInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DonateModelStoreContainer" CdmEntityContainer="DonateEntities1">
+          <EntitySetMapping Name="AnonymousDonate">
+            <EntityTypeMapping TypeName="DonateModel.AnonymousDonate">
+              <MappingFragment StoreEntitySet="AnonymousDonate">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ComesFrom" ColumnName="ComesFrom" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="DonateTime" ColumnName="DonateTime" />
+                <ScalarProperty Name="ServerReceiveTime" ColumnName="ServerReceiveTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATMInfo">
+            <EntityTypeMapping TypeName="DonateModel.ATMInfo">
+              <MappingFragment StoreEntitySet="ATMInfo">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BarCodeInfo">
+            <EntityTypeMapping TypeName="DonateModel.BarCodeInfo">
+              <MappingFragment StoreEntitySet="BarCodeInfo">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CardInfo">
+            <EntityTypeMapping TypeName="DonateModel.CardInfo">
+              <MappingFragment StoreEntitySet="CardInfo">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="CVC" ColumnName="CVC" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+                <ScalarProperty Name="Email3" ColumnName="Email3" />
+                <ScalarProperty Name="ServerReceiveTime" ColumnName="ServerReceiveTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChainStoreInfo">
+            <EntityTypeMapping TypeName="DonateModel.ChainStoreInfo">
+              <MappingFragment StoreEntitySet="ChainStoreInfo">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mytable">
+            <EntityTypeMapping TypeName="DonateModel.mytable">
+              <MappingFragment StoreEntitySet="mytable">
+                <ScalarProperty Name="ColumnA" ColumnName="ColumnA" />
+                <ScalarProperty Name="ColumnB" ColumnName="ColumnB" />
+                <ScalarProperty Name="ColumnC" ColumnName="ColumnC" />
+                <ScalarProperty Name="ColumnD" ColumnName="ColumnD" />
+                <ScalarProperty Name="Receipt" ColumnName="Receipt" />
+                <ScalarProperty Name="DonateTime" ColumnName="DonateTime" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NamedDonate">
+            <EntityTypeMapping TypeName="DonateModel.NamedDonate">
+              <MappingFragment StoreEntitySet="NamedDonate">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+                <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="Email3" ColumnName="Email3" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Receipt" ColumnName="Receipt" />
+                <ScalarProperty Name="DonateTime" ColumnName="DonateTime" />
+                <ScalarProperty Name="ServerReceiveTime" ColumnName="ServerReceiveTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteInfo">
+            <EntityTypeMapping TypeName="DonateModel.SiteInfo">
+              <MappingFragment StoreEntitySet="SiteInfo">
+                <ScalarProperty Name="SiteTermID" ColumnName="SiteTermID" />
+                <ScalarProperty Name="Candidate" ColumnName="Candidate" />
+                <ScalarProperty Name="DefaultSelect" ColumnName="DefaultSelect" />
+                <ScalarProperty Name="SiteTerm1" ColumnName="SiteTerm1" />
+                <ScalarProperty Name="SiteTerm2" ColumnName="SiteTerm2" />
+                <ScalarProperty Name="SiteTerm3" ColumnName="SiteTerm3" />
+                <ScalarProperty Name="SiteTerm4" ColumnName="SiteTerm4" />
+                <ScalarProperty Name="SiteTerm5" ColumnName="SiteTerm5" />
+                <ScalarProperty Name="PictureLocation" ColumnName="PictureLocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table">
+            <EntityTypeMapping TypeName="DonateModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="City_Local" ColumnName="City_Local" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebATMInfo">
+            <EntityTypeMapping TypeName="DonateModel.WebATMInfo">
+              <MappingFragment StoreEntitySet="WebATMInfo">
+                <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ContributionWay" ColumnName="ContributionWay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,113 @@
+/* 
+    Document   : menu
+    Created on : 2014/4/4, 上午 11:44:31
+    Author     : EllenChiu
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.menu-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.nav ul li a {
+    font-family: "微軟正黑體";
+    line-height: 45px;
+    color: #333;
+    height: 45px;
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #CCC;
+    display: block;
+    padding-left: 10px;
+    background-image: url(menu_img/icon1.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+    font-size: 14px;
+}
+
+.nav ul li a:hover {
+    font-family: "微軟正黑體";
+    line-height: 45px;
+    color: #F19A29;
+    text-decoration: none;
+    display: block;
+    background-image: url(menu_img/icon1s.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+    background-color: #F3F3F3;
+}
+.nav ul li .visited {
+    font-family: "微軟正黑體";
+    line-height: 45px;
+    color: #F19A29;
+    text-decoration: none;
+    display: block;
+    background-image: url(menu_img/icon1ds.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+}
+.menu-head{
+    background-color: #F39929;
+    color:#fff;
+    font-size: 20px !important;
+}
+.menu-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px; 
+    font-family: "微軟正黑體"; 
+    color: #333;
+    height: 45px;
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #CCC; 
+    background-image: url(menu_img/icon1.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+    font-size: 14px;
+}
+.menu-group-item :hover {
+    font-family: "微軟正黑體";
+    line-height: 45px;
+    color: #F19A29;
+    text-decoration: none;
+    display: block;
+    background-image: url(icon1s.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+    background-color: #F3F3F3;
+}
+
+
+.menu_body{
+    float: left;
+    width: 180px;
+    margin-left: 20px;
+
+}
+
+
+.menu_border{
+    background-color: #F39929;
+    color: #FFF;
+    font-size: 17px;
+    font-family: "微軟正黑體";
+
+}
+
+.nav ul li .visited {
+    font-family: "微軟正黑體";
+    line-height: 45px;
+    color: #F19A29;
+    text-decoration: none;
+    display: block;
+    background-image: url(menu_img/icon1ds.png);
+    background-repeat: no-repeat;
+    background-position: 160px center;
+}

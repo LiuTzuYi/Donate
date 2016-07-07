@@ -1,0 +1,46 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MaintainSiteTerm.aspx.cs" Inherits="Donate.MaintainSiteTerm" %>
+
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="EntityDataSource1" EnableTheming="True" KeyFieldName="SiteTermID" Theme="PlasticBlue" OnRowInserting="ASPxGridView1_RowInserting">
+            <Columns>
+                <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+                </dx:GridViewCommandColumn>
+<%--                <dx:GridViewDataTextColumn FieldName="SiteTermID" ReadOnly="True" VisibleIndex="1">
+                    
+                </dx:GridViewDataTextColumn>--%>
+                <dx:GridViewDataTextColumn FieldName="Candidate" VisibleIndex="2">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataCheckColumn FieldName="DefaultSelect" VisibleIndex="3">
+                </dx:GridViewDataCheckColumn>
+                <dx:GridViewDataTextColumn FieldName="SiteTerm1" VisibleIndex="4">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SiteTerm2" VisibleIndex="5">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SiteTerm3" VisibleIndex="6">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SiteTerm4" VisibleIndex="7">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SiteTerm5" VisibleIndex="8">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="PictureLocation" VisibleIndex="9">
+                </dx:GridViewDataTextColumn>
+            </Columns>
+        </dx:ASPxGridView>
+        <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=DonateEntities" DefaultContainerName="DonateEntities" EnableDelete="True" EnableFlattening="False" EnableInsert="True" EnableUpdate="True" EntitySetName="SiteInfoes">
+        </asp:EntityDataSource>
+    
+    </div>
+    </form>
+</body>
+</html>

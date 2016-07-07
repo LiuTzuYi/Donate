@@ -1,0 +1,517 @@
+@charset "utf-8"; @import url("reset.css");
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { 
+    background-repeat: repeat-x;
+    margin-left: 0px;
+    font-family: "微軟正黑體";
+    color: #333;
+    font-size: 16px;
+}
+
+
+.gcss_btn {
+    font-size: 17px;
+    font-family: "微軟正黑體";
+    font-weight: lighter;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 3px solid #fbba68;
+    text-decoration: none;
+    /* [disabled]background: -moz-linear-gradient( center top, #f2c218 5%, #f0911d 100% ); */
+    background: -ms-linear-gradient( top, #f2c218 5%, #f0911d 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2c218', endColorstr='#f0911d');
+    background-color: #F39929;
+    color: #FFFFFF;
+    display: inline-block;
+    text-shadow: 1px 1px 0.5px #930;
+    -webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+    -moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+    box-shadow: inset 1px 1px 1px 0px #993300;
+    background-position: left top;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-right: 150px;
+    padding-bottom: 10px;
+    padding-left: 150px;
+    margin-right: 8px;
+}
+
+.css_btn_class {
+    font-size: 16px;
+    font-family: "微軟正黑體";
+    font-weight: normal;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #e3891c;
+    padding: 10px 150px;
+    text-decoration: none;
+    background: -moz-linear-gradient( center top, #f2c218 5%, #f0911d 100% );
+    background: -ms-linear-gradient( top, #f2c218 5%, #f0911d 100% );
+
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2c218', endColorstr='#f0911d');
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #f3c110), color-stop(100%, #f0911d) );
+    background-color: #f0911d;
+    color: #ffffff;
+    display: inline-block;
+    text-shadow: 1px 1px 0px #db8215;
+    -webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+    -moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+    box-shadow: inset 1px 1px 0px 0px #fff7d4;
+}
+
+.css_btn_class:hover {
+    background:-moz-linear-gradient( center top, #f2c218 5%, #f0911d 100% );
+    background:-ms-linear-gradient( top, #f0911d 5%, #f0911d 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2c218', endColorstr='#f0911d');
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #f0911d), color-stop(100%, #f0911d) );
+    background-color:#f0911d;
+}
+
+.css_btn_class:active {
+    position:relative;
+    top:1px;
+}
+
+.wap {
+    width: 1170px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+.head {
+    display: block; 
+    width: 100%;
+    background-position: center;
+}
+
+
+
+.blue {
+    color: #069;
+}
+.wap .head .top1 {
+    float: right;
+    height: 15px;
+    width: 360px;
+    padding-top: 15px;
+    padding-right: 60px;
+    font-family: "微軟正黑體";
+    font-size: 14px;
+    color: #333;
+    line-height: 15px;
+}
+.wap .head .top1_a {
+    float: right;
+    height: 15px;
+    width: 360px;
+    padding-top: 15px;
+    padding-right: 5px;
+    font-family: "微軟正黑體";
+    font-size: 14px;
+    color: #333;
+    line-height: 15px;
+}
+
+.wap .head .pon {
+    font-family: "微軟正黑體";
+    font-size: 13px;
+    color: #333;
+    line-height: 12px;
+    padding-top: 188px;
+    width: 300px;
+    padding-left: 102px;
+}
+.wap .head .topnav {
+    font-family: "微軟正黑體";
+    font-size: 18px;
+    color: #282828;
+    margin-top: -85px;
+    padding-left: 600px;
+}
+.wap .head .topnav_a {
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    color: #282828;
+    margin-top: -85px;
+    padding-left: 570px;
+}
+.wap .head .topnav_firm {
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    color: #282828;
+    margin-top: -85px;
+    padding-left: 530px;
+}
+
+
+.cont {
+    width: 1030px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    height: auto;
+/*    padding-top: 0px;
+    padding-bottom: 20px;
+    overflow: hidden;*/
+}
+.cont .tith2  {
+    font-family: "微軟正黑體";
+    color: #f39a29;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    display: block;
+    padding-left: 25px;
+}
+.cont .tit_h2 {
+    font-family: "微軟正黑體";
+    color: #f39a29;
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.cont .box  {
+    width: 100%;
+    /* [disabled]height: 600px; */
+}
+.cont .box .boxleft  {
+    float: left;
+    width: 180px;
+    margin-left: 20px;
+}
+.cont .box .boxleft .nav ul {
+    /* [disabled]list-style-type: none; */
+    border: 1px solid #CCC;
+}
+
+
+.wap .cont .box .boxleft .nav ul li .natop {
+    background-color: #F39929;
+    color: #FFF;
+    font-size: 17px;
+    font-family: "微軟正黑體";
+}
+
+
+
+.cont .box .boxright  {
+    float: right;
+    width: 800px;
+}
+
+
+.textfield {
+    font-family: "微軟正黑體";
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    color: #999;
+    vertical-align: middle;
+}
+.textfield-dis {
+    font-family: "微軟正黑體";
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    color: #999;
+    background-color: #EFEFEF;
+} 
+.wap .cont.mem {
+    width: 1100px; 
+}
+.cont.mem .box .boxright.mem {
+    width: 880px;
+}
+
+
+.f15 {
+    font-family: "微軟正黑體";
+    font-size: 15px;
+}
+.f16 {
+    font-family: "微軟正黑體";
+    font-size: 16px;
+}
+.f18 {
+    font-family: "微軟正黑體";
+    font-size: 18px;
+}
+
+
+.f14 {
+    font-family: "微軟正黑體";
+    font-size: 14px;
+    line-height: 25px;
+}
+.f13 {
+    font-family: "微軟正黑體";
+    font-size: 13px;
+    line-height: 25px;
+}
+.f12 {
+    font-family: "微軟正黑體";
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.orang {
+    color: #F60;
+}
+.gray {
+    color: #999;
+}
+
+.brown {
+    color: #963;
+}
+
+.red {
+    color: #C00;
+}
+
+.stype table tr td {
+    font-size: 15px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+
+.setbot {
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+.oline {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #F39929;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    clear: both;
+    line-height: 30px;
+    height: 30px;
+}
+.oline_s {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #F39929;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+    height: 0px;
+}
+
+table tr td {
+    vertical-align: middle;
+}
+.day table {
+    border: 1px solid #CCC;
+}
+
+.day table tr th{
+    font-weight: normal;
+    background-color: #f3f3f3;
+    border: 1px solid #CCC;
+    vertical-align: middle;
+    line-height: 16px;
+    height: 16px;
+}
+
+.day table tr td {
+    border: 1px solid #CCC;
+}
+
+.infotxtbox {
+    font-size: 15px;
+    color: #282828;
+    background-color: #F2F2F2;
+    /* [disabled]width: 80%; */
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 10px;
+}
+.infotxtbox2 {
+    font-size: 16px;
+    color: #282828;
+    background-color: #F2F2F2;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    /* [disabled]border: 1px solid #CCCCCC; */
+    border-radius: 3px;
+    padding: 10px;
+}
+.paycard2 {
+    border: 1px solid #F0F0F0;
+    padding: 5px;
+}
+.paycard2 tr th {
+    border: 1px solid #EAEAEA;
+    padding: 3px;
+    height: 35px;
+    line-height: 35px;
+}
+.paycard2 tr td {
+    border: 1px solid #EAEAEA;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    
+}
+
+
+.pay_a {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    /* [disabled]text-align: center; */
+    font-size: 14px;
+}
+.pay_b {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    /* [disabled]text-align: center; */
+}
+
+.pay_a .left, .pay_b .left{
+    width: 60%;
+    display: block;
+    float: left;
+    overflow: hidden;
+    /* [disabled]padding-left: 5%; */
+}
+.pay_a .right, .pay_b .right {
+    display: block;
+    width: 35%;
+    float: right;
+}
+.pay_a .right h3, .pay_b .right h3 {
+    color: #F39928;
+    font-weight: normal;
+    line-height: 24px;
+    height: 24px;
+}
+
+.pay_a table tr td , .pay_b table tr td{
+    line-height: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.pay_a table tr th , .pay_b table tr th {
+    font-weight: normal;
+    /* [disabled]text-align: right; */
+    line-height: 25px;
+    border-bottom-style: solid;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: right;
+    
+}
+.pay_a .infobox_u, .pay_b .infobox_u {
+    /* [disabled]width: 80%; */
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    min-height: 60px;
+    line-height: 20px;
+    border: 1px solid #EEE;
+    background-color: #F3F3F3;
+    border-radius: 3px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+}
+
+.pay_a h3 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #EE911D;
+}
+.pay_a h4 {
+    font-size: 20px;
+    color: #EE911D;
+    font-weight: normal;
+}
+
+
+
+.info table {
+    border: 1px solid #CCC;
+    font-size: 14px;
+}
+
+
+.info table tr th {
+    font-weight: normal;
+    background-color: #f3f3f3;
+    border: 1px solid #CCC;
+    vertical-align: middle;
+    /* [disabled]line-height: 16px; */
+    /* [disabled]height: 16px; */
+}
+.info table tr td {
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+
+.clear {
+    clear: both;
+}
+.pay_a table tr th div p {
+    text-align: center;
+}
+.buslogo {
+    height: 110px;
+    width: 500px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    text-align: center;
+    font-family: "微軟正黑體";
+    font-size: 32px;
+    vertical-align: middle;
+    line-height: 110px; 
+    border: 1px solid #FC0;
+    margin-top: 20px;
+}
+.pay_div{
+     border:1px  solid #CCC; 
+     border-radius:8px; 
+     padding:10px;  
+     -webkit-box-shadow: 3px 3px 3px 0px rgba(13, 24, 24, 0.18);
+     -moz-box-shadow: 3px 3px 3px 0px rgba(13, 24, 24, 0.18);
+     box-shadow:3px 3px 3px 0px rgba(13, 24, 24, 0.18);
+}

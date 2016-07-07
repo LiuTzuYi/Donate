@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+.lg_txt{
+    margin-left: 235px;
+}
+/*.sig_header{
+        background-image: url(image/top_top.png);
+        display: block;
+        height: 207px;
+        width: 100%;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        text-align: center;
+}*/
+.sig_content {
+    /*	 background-image: url(image/single_log.png); */
+    display: block;
+    height: 627px;
+    width: 1060px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-repeat: no-repeat;
+}
+.P_Lgin{ 
+    width:500px;
+    height:600px;
+    float:left;
+    display:block;
+    background-color:transparent;
+}
+
+.P_Lgin h2 {
+    font-family: "微軟正黑體";
+    font-size: 36px;
+    color: #FFF;
+    /*    height: 100px;
+        width: 430px;*/
+    padding-left: 170px;
+    font-weight: normal;
+    padding-top: 70px;
+}
+
+.c_Lgin{ width:500px;
+         height:600px;
+         float:right;
+         background-color:transparent;
+}
+
+.c_Lgin h2 {
+    font-family: "微軟正黑體";
+    font-size: 36px;
+    color: #FFF;
+    /*    height: 100px;
+        width: 380px;*/
+    padding-left: 210px;
+    font-weight: normal;
+    padding-top: 70px;
+}
+
+.P_Lgin .login_info {
+    /*height: 400px;
+    width: 400pt; */
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 50px;
+}
+.c_Lgin .login_info {
+    /*    height: 400px;
+        width: 280pt;*/
+    margin-top:70px;
+    margin-right: auto;
+    margin-left: auto;
+     padding-left: 85px; 
+}
+/*.fotter_0717 {
+    display: block;
+    background-color: #CCC;
+    position: fixed;
+    font-family: "微軟正黑體";
+    font-size: 24px;
+    color: #FFF;
+    text-align: center;
+    padding-top: 40px;
+    line-height: 30px;
+    margin-bottom: 0px;
+    padding-bottom: 60px;
+    height: 100px;
+    width: 100%;
+}*/
